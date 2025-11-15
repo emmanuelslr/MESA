@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Image from "next/image";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -183,9 +184,11 @@ export default function TutorialOverlay({
               <div className="flex items-center gap-3">
                 <div className="text-3xl">
                   {content.emoji === "favicon" ? (
-                    <img 
+                    <Image 
                       src="/icon.svg" 
                       alt="MESA" 
+                      width={32}
+                      height={32}
                       className="w-8 h-8"
                     />
                   ) : (

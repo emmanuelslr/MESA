@@ -1,5 +1,15 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {}
+const nextConfig = {
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'singular.vc',
+        pathname: '/wp-content/uploads/**',
+      },
+    ],
+  },
+}
 
 module.exports = nextConfig
 

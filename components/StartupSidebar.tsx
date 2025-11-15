@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useCallback } from "react";
+import Image from "next/image";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import StartupCarousel3D from "@/components/3d/StartupCarousel3D";
@@ -71,9 +72,11 @@ export default function StartupSidebar({ onSelectStartup }: StartupSidebarProps)
                 style={{ backgroundColor: selectedStartup.color }}
               >
                 {selectedStartup.logoUrl ? (
-                  <img 
+                  <Image 
                     src={selectedStartup.logoUrl} 
                     alt={selectedStartup.displayName}
+                    width={56}
+                    height={56}
                     className="w-full h-full object-contain p-1.5"
                   />
                 ) : (
