@@ -2,7 +2,6 @@
 
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
-import Image from "next/image";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
@@ -91,19 +90,15 @@ export default function DetailsPage() {
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         {/* Background image */}
         <div className="absolute inset-0 z-0">
-          <Image
+          <img
             src="https://singular.vc/wp-content/uploads/2021/03/bck-black-min-scaled.jpg"
             alt="Background"
-            fill
-            className="object-cover dark:block hidden"
-            priority
+            className="w-full h-full object-cover dark:block hidden"
           />
-          <Image
+          <img
             src="https://singular.vc/wp-content/uploads/2021/03/bck-white-min-scaled.jpg"
             alt="Background"
-            fill
-            className="object-cover dark:hidden block"
-            priority
+            className="w-full h-full object-cover dark:hidden block"
           />
         </div>
         
@@ -193,11 +188,9 @@ export default function DetailsPage() {
         <div className="mb-12 flex items-center justify-between py-6 border-b">
           {/* Logo HEC à gauche */}
           <div className="flex items-center gap-4">
-            <Image 
+            <img 
               src="/images/HEC_Paris.svg (1).png" 
               alt="HEC Paris"
-              width={100}
-              height={48}
               className="h-12 w-auto brightness-0 dark:invert"
             />
           </div>
@@ -560,17 +553,15 @@ export default function DetailsPage() {
     <footer className="relative py-12 overflow-hidden">
       {/* Background image */}
       <div className="absolute inset-0 z-0">
-        <Image
+        <img
           src="https://singular.vc/wp-content/uploads/2021/03/bck-black-min-scaled.jpg"
           alt="Background"
-          fill
-          className="object-cover dark:block hidden"
+          className="w-full h-full object-cover dark:block hidden"
         />
-        <Image
+        <img
           src="https://singular.vc/wp-content/uploads/2021/03/bck-white-min-scaled.jpg"
           alt="Background"
-          fill
-          className="object-cover dark:hidden block"
+          className="w-full h-full object-cover dark:hidden block"
         />
       </div>
 

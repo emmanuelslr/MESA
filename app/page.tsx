@@ -3,7 +3,6 @@
 import { useState, useMemo, useEffect, useCallback } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
-import Image from "next/image";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -385,19 +384,15 @@ export default function Home() {
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         {/* Background image */}
         <div className="absolute inset-0 z-0">
-          <Image
+          <img
             src="https://singular.vc/wp-content/uploads/2021/03/bck-black-min-scaled.jpg"
             alt="Background"
-            fill
-            className="object-cover dark:block hidden"
-            priority
+            className="w-full h-full object-cover dark:block hidden"
           />
-          <Image
+          <img
             src="https://singular.vc/wp-content/uploads/2021/03/bck-white-min-scaled.jpg"
             alt="Background"
-            fill
-            className="object-cover dark:hidden block"
-            priority
+            className="w-full h-full object-cover dark:hidden block"
           />
         </div>
         
@@ -444,11 +439,9 @@ export default function Home() {
           <div className="mb-12 flex items-center justify-between py-6 border-b">
             {/* Logo HEC à gauche avec animation spin */}
             <div className="flex items-center gap-4">
-              <Image 
+              <img 
                 src="/images/HEC_Paris.svg (1).png" 
                 alt="HEC Paris"
-                width={100}
-                height={48}
                 className="h-12 w-auto animate-spin-slow brightness-0 dark:invert"
                 style={{ animationDuration: '3s' }}
               />
@@ -785,7 +778,7 @@ export default function Home() {
                         }}
                         className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-11 px-8 w-full"
                       >
-                        <Image src="/icon.svg" alt="MESA" width={20} height={20} className="w-5 h-5" />
+                        <img src="/icon.svg" alt="MESA" className="w-5 h-5" />
                         Voir l&apos;analyse détaillée
                       </Link>
                       <p className="text-xs text-center text-muted-foreground">
@@ -815,17 +808,15 @@ export default function Home() {
     <footer className="relative mt-16 py-12 overflow-hidden">
       {/* Background image */}
       <div className="absolute inset-0 z-0">
-        <Image
+        <img
           src="https://singular.vc/wp-content/uploads/2021/03/bck-black-min-scaled.jpg"
           alt="Background"
-          fill
-          className="object-cover dark:block hidden"
+          className="w-full h-full object-cover dark:block hidden"
         />
-        <Image
+        <img
           src="https://singular.vc/wp-content/uploads/2021/03/bck-white-min-scaled.jpg"
           alt="Background"
-          fill
-          className="object-cover dark:hidden block"
+          className="w-full h-full object-cover dark:hidden block"
         />
       </div>
 
