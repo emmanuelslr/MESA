@@ -223,12 +223,12 @@ function Scene({ startups, selectedIndex, onSelect, onCardClick, mousePosition, 
   return (
     <>
       {/* Éclairage */}
-      <ambientLight intensity={0.5} />
+      <ambientLight intensity={0.6} />
       <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} intensity={1} castShadow />
       <pointLight position={[-10, -10, -10]} intensity={0.5} />
       
-      {/* Environnement pour les reflets */}
-      <Environment preset="city" />
+      {/* Environnement pour les reflets - utilise le preset "sunset" qui ne nécessite pas de fichier externe */}
+      <Environment preset="sunset" />
       
       {/* Groupe avec parallaxe et drag */}
       <group ref={groupRef}>
