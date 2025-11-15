@@ -60,6 +60,9 @@ export default function DetailsPage() {
     const parsedData: DetailsPageData = JSON.parse(savedData);
     setData(parsedData);
 
+    // Créer une promesse pour le délai minimum de 5 secondes
+    const minimumDelay = new Promise(resolve => setTimeout(resolve, 5000));
+
     // Lancer les simulations
     const mcResult = runMonteCarloSimulation(
       parsedData.npv,
@@ -76,7 +79,10 @@ export default function DetailsPage() {
     );
     setSensitivityResults(sensResults);
 
-    setIsLoading(false);
+    // Attendre au minimum 2 secondes avant d'afficher les résultats
+    minimumDelay.then(() => {
+      setIsLoading(false);
+    });
   }, [router]);
 
   if (isLoading || !data || !monteCarloResult) {
@@ -103,9 +109,12 @@ export default function DetailsPage() {
             <span className="text-red-600">.</span>
           </h1>
           
-          <p className="text-xl md:text-2xl text-black/80 dark:text-white/80 mb-12">
-            Chargement en cours
-          </p>
+          <div className="flex items-center justify-center gap-3 mb-12">
+            <div className="w-5 h-5 border-2 border-gray-400 border-t-transparent rounded-full animate-spin"></div>
+            <p className="text-lg md:text-xl text-black/80 dark:text-white/80">
+              Chargement en cours
+            </p>
+          </div>
           
           {/* Barre de progression horizontale */}
           <div className="w-full h-1 bg-gray-300 dark:bg-gray-700 rounded-full overflow-hidden">
@@ -129,7 +138,7 @@ export default function DetailsPage() {
             }
           }
           .animate-loading-progress {
-            animation: loading-progress 2s ease-in-out infinite;
+            animation: loading-progress 5s ease-in-out infinite;
           }
         `}</style>
       </section>
