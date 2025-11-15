@@ -189,7 +189,7 @@ export default function DetailsPage() {
           {/* Logo HEC à gauche */}
           <div className="flex items-center gap-4">
             <img 
-              src="/images/HEC_Paris.svg (1).png" 
+              src="/images/hec-paris-logo.png" 
               alt="HEC Paris"
               className="h-12 w-auto brightness-0 dark:invert"
             />

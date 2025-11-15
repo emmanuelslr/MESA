@@ -440,7 +440,7 @@ export default function Home() {
             {/* Logo HEC à gauche avec animation spin */}
             <div className="flex items-center gap-4">
               <img 
-                src="/images/HEC_Paris.svg (1).png" 
+                src="/images/hec-paris-logo.png" 
                 alt="HEC Paris"
                 className="h-12 w-auto animate-spin-slow brightness-0 dark:invert"
                 style={{ animationDuration: '3s' }}
